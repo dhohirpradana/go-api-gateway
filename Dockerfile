@@ -13,8 +13,7 @@ WORKDIR /app
 RUN apk add --no-cache ca-certificates sqlite-libs
 
 COPY --from=builder /app/gateway .
-COPY static/ ./static/
-COPY data/ ./data/
+COPY config/ ./config/
 
 EXPOSE 8080
 CMD ["./gateway"]
