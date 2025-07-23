@@ -1,6 +1,7 @@
 package config
 
 import (
+	"dhohirpradana/api-gateway/monitor"
 	"dhohirpradana/api-gateway/proxy"
 	"encoding/json"
 	"fmt"
@@ -96,5 +97,6 @@ func DeleteTargetHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "failed to save config", http.StatusInternalServerError)
 		return
 	}
+	monitor.DeleteTarget("/" + path)
 	w.WriteHeader(http.StatusNoContent)
 }

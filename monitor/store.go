@@ -79,6 +79,15 @@ func Record(path string, success bool) {
 	}
 }
 
+// Delete a target from monitoring stats
+func DeleteTarget(path string) {
+	delete(stats, path)
+	_, err := db.Exec("DELETE FROM stats WHERE path = ?", path)
+	if err != nil {
+		log.Printf("failed to delete target %s: %v", path, err)
+	}
+}
+
 func DashboardHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		rows, err := db.Query("SELECT path, success_count, fail_count FROM stats")
