@@ -1,5 +1,14 @@
 {
+  "/photos": "https://jsonplaceholder.typicode.com/photos",
+  "/photos/1": "https://jsonplaceholder.typicode.com/photos/1",
+  "/photos/2": "https://jsonplaceholder.typicode.com/photos/2",
+  "/photos/3": "https://jsonplaceholder.typicode.com/photos/3",
+  "/photos/4": "https://jsonplaceholder.typicode.com/photos/4",
   "/todos": "https://jsonplaceholder.typicode.com/todos",
   "/todos2": "https://jsonplaceholder.typicode.com/todos",
-  "/users": "https://jsonplaceholder.typicode.com/users"
+  "/users": "https://jsonplaceholder.typicode.com/users",
+  "/users/1": "https://jsonplaceholder.typicode.com/users/1",
+  "/users/2": "https://jsonplaceholder.typicode.com/users/2",
+  "/users/3": "https://jsonplaceholder.typicode.com/users/3",
+  "/users/4": "https://jsonplaceholder.typicode.com/users/4"
 }

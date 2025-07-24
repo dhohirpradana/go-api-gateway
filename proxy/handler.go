@@ -66,14 +66,14 @@ func NewProxyHandler() http.HandlerFunc {
 		targetStr, ok := cfg[path]
 		if !ok {
 			http.Error(w, "API not configured", http.StatusNotFound)
-			monitor.Record(path, false)
+			// monitor.Record(path, false)
 			return
 		}
 
 		remote, err := url.Parse(targetStr)
 		if err != nil {
 			http.Error(w, "Invalid target URL", http.StatusInternalServerError)
-			monitor.Record(path, false)
+			// monitor.Record(path, false)
 			return
 		}
 
