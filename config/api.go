@@ -80,6 +80,8 @@ func AddTargetHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	monitor.AddTarget(body.Path)
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	fmt.Fprintf(w, "Added route: %s → %s", body.Path, body.Target)
 }

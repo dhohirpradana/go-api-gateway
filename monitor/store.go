@@ -79,6 +79,13 @@ func Record(path string, success bool) {
 	}
 }
 
+// Add new target to monitoring stats
+func AddTarget(path string) {
+	stats[path] = &Stats{}
+	_, _ = db.Exec(`INSERT INTO stats(path, success_count, fail_count)
+		VALUES(?, 0, 0)`, path)
+}
+
 // Delete a target from monitoring stats
 func DeleteTarget(path string) {
 	delete(stats, path)

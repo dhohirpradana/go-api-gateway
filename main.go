@@ -32,7 +32,12 @@ func main() {
 
 	http.HandleFunc("/", proxy.NewProxyHandler())
 	http.HandleFunc("/metrics", dashboardHandler)
-	http.HandleFunc("/dashboard", monitor.DashboardHandler())
+
+	fs := http.FileServer(http.Dir("static"))
+	http.HandleFunc("/dashboard", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "/dashboard/", http.StatusMovedPermanently)
+	})
+	http.Handle("/dashboard/", http.StripPrefix("/dashboard/", fs))
 
 	http.HandleFunc("/targets", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {

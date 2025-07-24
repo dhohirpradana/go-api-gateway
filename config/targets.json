@@ -1,3 +1,6 @@
 {
-  "/todos": "https://jsonplaceholder.typicode.com/todos"
+  "/todos": "https://jsonplaceholder.typicode.com/todos",
+  "/todos2": "https://jsonplaceholder.typicode.com/todos",
+  "/users": "https://jsonplaceholder.typicode.com/users",
+  "/users1": "https://jsonplaceholder.typicode.com/users/1"
 }
